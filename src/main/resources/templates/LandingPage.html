@@ -7,15 +7,53 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>k -sry </title>
-  <link ref="stylesheet" th:href="@{CSS/BaseStyle.css}" >
+
+  <link ref="stylesheet" href="" th:href="@{css/BaseStyle.css}"  />
 
   </head>
 
-<Body>
+<body>
 
-  <h1>Fair Hand Borrowing 33</h1>
-  <img th:src="@{Images/logo.png}" alt="Image of a white and black tiger" >
+  <header>
+    <div class="moveMeLeft">
+      <img th:src="@{Images/logo.png}" alt="Image of a white and black tiger" >
+      <h1>Fair Hand Borrowing </h1>
+    </div>
+
+    <nav>
+      <a href="/legal/acceptable_use_policy"> Legal Pages</a>
+      <a href=""> Login</a>
+      <a href="/register"> register</a>
+    </nav>
+
+  </header>
+
+  <div id="testimonials">
+<!--    this is going to be changed by js-->
+    testminonials will come here
+  </div>
 
 
-  <a href="/register">Register</a>
-</Body>
+<div class="adSpace">
+</div>
+
+
+</body>
+
+
+
+
+
+<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+
+<script type="text/babel" th:src="@{/js/testimonials.js}"></script>
+
+<footer>
+  This is the footer.
+</footer>
+
+
+</html>
