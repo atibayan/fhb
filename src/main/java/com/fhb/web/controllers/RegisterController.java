@@ -21,19 +21,19 @@ public class RegisterController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "login";
+        return "LogIn";
     }
 
     @GetMapping("/")
     public String indexPage() {
-        return "index";
+        return "LandingPage";
     }
 
     @GetMapping("/register")
     public String register(Model model) {
         RegistrationDto user = new RegistrationDto();
         model.addAttribute("user", user);
-        return "register";
+        return "Register";
     }
 
     @PostMapping("/register/save")
@@ -51,7 +51,7 @@ public class RegisterController {
 
         if(result.hasErrors()) {
             model.addAttribute("user", user);
-            return "register";
+            return "Register";
         }
 
         userService.save(user);

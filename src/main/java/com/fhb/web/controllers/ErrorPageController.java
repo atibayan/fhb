@@ -11,5 +11,8 @@ public class ErrorPageController {
 
     @GetMapping(path="/error")
     public String getPageNotFound(){return "error/PageNotFound";}
+//
+//    @GetMapping(path="/here")
+//    public String getPageNotFo(){return "error/PageNotFound";}
 
 }
