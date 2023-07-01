@@ -9,10 +9,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class legalPages {
     @GetMapping(path="/legal/acceptable_use_policy")
-    public String getAcceptableUse(){return "legalPages/AcceptableUsePolicy";}
+    public String getAcceptableUsePolicy(){return "legalPages/AcceptableUsePolicy";}
 
     @GetMapping(path="/legal/contact_us")
     public String getContactPage(){return "legalPages/ContactUs";}
+
+    @GetMapping(path="/legal/cookies_policy")
+    public String getCookiesPolicy(){return "legalPages/CookiesPolicy";}
 
     @GetMapping(path="/legal/disclaimer")
     public String getDisclaimer(){return "legalPages/Disclaimer";}
