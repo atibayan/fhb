@@ -23,7 +23,7 @@ public class legalPages {
     @GetMapping(path="/legal/insurance_policy")
     public String getInsurancePolicy(){return "legalPages/InsurancePolicy";}
 
-    @GetMapping(path="/legal/terms_of_use_policy")
+    @GetMapping(path="/legal/privacy_policy")
     public String getPrivacyPolicy(){return "legalPages/PrivacyPolicy";}
 
 }

@@ -17,18 +17,11 @@
 <!--  importing fragments -->
 <body>
 
-  <header>
-    <div class="moveMeLeft">
-      <img th:src="@{Images/logo.png}" alt="Image of a white and black tiger" >
-      <h1>Fair Hand Borrowing </h1>
-    </div>
+  <header th:replace="~{/components/Header :: logo}" />
+  <nav th:replace="~{/components/Navigation::topnav}" />
 
-    <div th:replace="~{/components/Navigation ::topnav}" />
-    <br />
-    <br />
-    <br />
 
-  </header>
+
 
   <div id="testimonials">
     <h1>test to see if testimonials document is able to get this</h1>
@@ -42,13 +35,9 @@
 <script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
 <script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
-
-
 <script type="text/babel" async th:src="@{/js/testimonials.js}"></script>
 
-<footer>
-  This is the footer.
-</footer>
+<footer th:replace="~{components/Footer ::footer}"/>
 
 
 </html>

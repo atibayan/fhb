@@ -7,6 +7,5 @@ public interface UserService {
 
     void save(RegistrationDto user);
     User findByEmail(String email);
-
     User findByUserName(String userName);
 }

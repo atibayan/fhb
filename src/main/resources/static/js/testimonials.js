@@ -119,7 +119,6 @@ async function getPhotoAndReview(numPeople=3){
 
             }).catch((err)=>{console.log(err)})
         }
-
         good(userObjs)
     })
 
