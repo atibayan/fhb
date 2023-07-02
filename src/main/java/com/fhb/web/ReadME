@@ -1,9 +1,19 @@
+-- RULES
+    - the views must be names using upper case
+    - variable naming is pascalCase
+
+
+
+--------
+
+
 --Cristi
 7/1: Hey friends, lets use this to write how things work so we dont have to scroll up in the chat
     - When you write something new to the form please specify the date of the comment
 
-7/2:
-    - something something
+7/2: - use "git clean -f " if you want to roll back your local changes to the last commit
+
+
 
 
 --Mia

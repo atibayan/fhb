@@ -1,5 +1,6 @@
 package com.fhb.web.controllers;
 
+import com.fhb.web.Encryption.Encryption;
 import com.fhb.web.dtos.RegistrationDto;
 import com.fhb.web.models.User;
 import com.fhb.web.services.UserService;
@@ -21,7 +22,7 @@ public class RegisterController {
 
     @GetMapping("/login")
     public String loginPage() {
-        return "LogIn";
+        return "registration/LogIn";
     }
 
     @GetMapping("/")
@@ -33,30 +34,50 @@ public class RegisterController {
     public String register(Model model) {
         RegistrationDto user = new RegistrationDto();
         model.addAttribute("user", user);
-        return "Register";
+        return "registration/Register";
     }
 
     @PostMapping("/register/save")
-    public String register(@ModelAttribute("user") RegistrationDto user, BindingResult result, Model model) {
+    public String register( @ModelAttribute("user") RegistrationDto user, BindingResult result, Model model) {
+
         User existingUserEmail = userService.findByEmail(user.getEmail());
 
-        if(existingUserEmail != null && existingUserEmail.getEmail() != null && !existingUserEmail.getEmail().isEmpty()) {
-            return "redirect:/register?fail";
-        }
+        // encrypt the user id and send it to the form.
+        Encryption enc= new Encryption();
 
-        User existingUserUsername = userService.findByUserName(user.getUserName());
-        if(existingUserUsername != null && existingUserUsername.getUserName() != null && !existingUserUsername.getUserName().isEmpty()) {
-            return "redirect:/register?fail";
-        }
+        model.addAttribute("newRegId",enc.encrypt( existingUserEmail.getUserId()) );
+        model.addAttribute("userName",existingUserEmail.getUserName() );
+        //        https://www.baeldung.com/spring-redirect-and-forward
 
-        if(result.hasErrors()) {
-            model.addAttribute("user", user);
-            return "Register";
-        }
+        return "registration/UserProfile";
 
-        userService.save(user);
-        return "redirect:/?success";
+        // while developing the website i dont want to have to eneter details in to the user form every time
+            // need a quick fail
+
+//
+//
+//        if(existingUserEmail != null && existingUserEmail.getEmail() != null && !existingUserEmail.getEmail().isEmpty()) {
+//            return "redirect:/register?fail";
+//        }
+//
+//        User existingUserUsername = userService.findByUserName(user.getUserName());
+//        if(existingUserUsername != null && existingUserUsername.getUserName() != null && !existingUserUsername.getUserName().isEmpty()) {
+//            return "redirect:/register?fail";
+//        }
+//
+//        if(result.hasErrors()) {
+//            model.addAttribute("user", user);
+//            return "registration/Register";
+//        }
+//
+//        userService.save(user);
+//
+//
+
+
     }
+
+
 
 
 }

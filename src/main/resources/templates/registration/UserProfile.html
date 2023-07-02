@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h1> Set up your profile </h1>
+    <h4>Registration was successful <span th:text="${userName}"> </span> </h4>
+
+    <form method="post" th:action="@{/profile/save}"  th:object="${profile}">
+        <input  type="hidden" th:value="${user}" >
+
+        <div class="profImg">
+            profile picture
+            <button> Upload a profile image</button>
+        </div>
+
+        <div class="lendOrBorrow">
+            <label for="borrower">I want to be a lender</label>
+            <input type="radio" name="lender" value="lender" id="lender">
+
+            <label for="borrower">I want to be a borrower </label>
+            <input type="radio" name="lender" value="borrower" id="borrower">
+        </div>
+
+
+        <div class="Bio">
+            <label>Bio</label>
+        </div>
+
+
+        <div>
+            <label for="TOS">I have read and accept the <a href="/legal/acceptable_use_policy"> Acceptable Use Policy</a></label>
+            <input type="checkbox" required id="TOS">
+
+            <label for="privacy">I have read and accept the Privacy Policy</label>
+            <input type="checkbox" required id="privacy">
+
+            <label for="acceptable">I have read and accept the Insurance Policy</label>
+            <input type="checkbox" required id="acceptable">
+
+            <label for="credit">I have concent to my credit score being displayed</label>
+            <input type="checkbox" required id="credit">
+
+        </div>
+
+        <button type="submit" >Create a Profile </button>
+    </form>
+
+
+</body>
+</html>
