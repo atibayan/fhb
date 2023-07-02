@@ -1,1 +1,14 @@
-Hey friends, lets use this to write how things work so we dont have to scroll up in the chat
+--Cristi
+7/1: Hey friends, lets use this to write how things work so we dont have to scroll up in the chat
+    - When you write something new to the form please specify the date of the comment
+
+7/2:
+    - something something
+
+
+--Mia
+7/1: Dto is data transfer object. The reason why we do this is to control the data that will be exposed to
+the View/front end… for instance the model for user contains “private” data like password. These aren’t needed by
+ frontend/ui so we remove it through DTOs…. Technically we can live without them by directly using the model itself
+  but a better design is to do it via Dtos. I will update the read me.
+
