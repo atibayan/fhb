@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3"
@@ -8,10 +9,12 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>k -sry </title>
 
-  <link ref="stylesheet" href="" th:href="@{css/BaseStyle.css}"  />
-
+  <link th:href="@{/css/BaseStyle.css}" rel="stylesheet" />
   </head>
 
+
+<!--https://stackoverflow.com/questions/50782748/how-to-include-one-html-page-to-another-in-thymeleaf  -->
+<!--  importing fragments -->
 <body>
 
   <header>
@@ -20,15 +23,15 @@
       <h1>Fair Hand Borrowing </h1>
     </div>
 
-    <nav>
-      <a href="/legal/acceptable_use_policy"> Legal Pages</a>
-      <a href=""> Login</a>
-      <a href="/register"> register</a>
-    </nav>
+    <div th:replace="~{/components/Navigation ::topnav}" />
+    <br />
+    <br />
+    <br />
 
   </header>
 
   <div id="testimonials">
+    <h1>test to see if testimonials document is able to get this</h1>
   </div>
 
 
@@ -41,7 +44,7 @@
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 
 
-<script type="text/babel" th:src="@{/js/testimonials.js}"></script>
+<script type="text/babel" async th:src="@{/js/testimonials.js}"></script>
 
 <footer>
   This is the footer.

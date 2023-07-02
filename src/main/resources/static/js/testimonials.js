@@ -1,8 +1,9 @@
-alert("testimonals.js has working code in it ")
+// alert("testimonals.js has working code in it ")
 
 // need to test if its able to actually get the html elements in the main
 
-let working=document.getElementById("root")
+let working=document.getElementById("testimonials")
+
 
 let reviews=[
     `Fair Hand Borrowing Company is a marketplace
@@ -122,6 +123,11 @@ async function getPhotoAndReview(numPeople=3){
         good(userObjs)
     })
 
+    console.log(doneAPI)
+
+
+        // something is wrong here
+            // right syntax since it works as a stand alone doc in visualStudio Code
     doneAPI.then(
         (data)=>{
             data.map(onePerson=>{
@@ -129,6 +135,7 @@ async function getPhotoAndReview(numPeople=3){
             })
         }
     ).catch((err)=>{console.log("There was an error triggered in testimonials " +err)})
+
 }
 
 let placeInHTML=(data)=>{
@@ -140,5 +147,11 @@ let placeInHTML=(data)=>{
         <p>Rating: ${data.stars} /5 </p>
     </div>
     `
+
+    console.log("inside of placeIn HTML")
+    console.log(working.innerHTML)
 }
 
+
+getPhotoAndReview();
+document.getElementById("testimonials").innerHTML="testimonals has valid fetch code but its not displaying ";
