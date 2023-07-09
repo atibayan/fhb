@@ -2,7 +2,14 @@
     - the views must be names using upper case
     - variable naming is pascalCase
 
-
+-- Task List :
+        Loan form
+        Insurance form
+        Rating form
+        Complaint form
+        Admin panel
+        User page (ex: - done:cristi)
+Lable with - done once working
 
 --------
 
@@ -12,6 +19,8 @@
     - When you write something new to the form please specify the date of the comment
 
 7/2: - use "git clean -f " if you want to roll back your local changes to the last commit
+7/9: we have the following things to get done
+
 
 
 
