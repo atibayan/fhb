@@ -6,6 +6,8 @@
 </head>
 <body>
 <h2>Registration Form</h2>
+<div th:if="${param.fail}">username or email already exists! </div>
+
 <form th:action="@{/register/save}" method="post" th:object="${user}">
     <div>
         <label for="username">User Name:</label>
@@ -36,6 +38,7 @@
         <input type="password" id="confirmPassword" name="confirmPassword" required>
     </div>
     <button type="submit">Register</button>
+    <button th:href="@{/login}" >log in</button>
 </form>
 </body>
 </html>

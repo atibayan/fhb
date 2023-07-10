@@ -1,5 +1,6 @@
 package com.fhb.web.dtos;
 
+import jakarta.validation.constraints.NotEmpty;
 import lombok.*;
 import org.springframework.format.annotation.DateTimeFormat;
 
@@ -11,10 +12,17 @@ import java.util.Date;
 @AllArgsConstructor
 @ToString
 public class RegistrationDto {
+
+    private Long id;
+    @NotEmpty
     private String userName;
+    @NotEmpty
     private String firstName;
+    @NotEmpty
     private String lastName;
+    @NotEmpty
     private String email;
+    @NotEmpty
     private String password;
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date dob;

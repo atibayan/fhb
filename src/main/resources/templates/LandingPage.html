@@ -13,12 +13,18 @@
   </head>
 
 
-<!--https://stackoverflow.com/questions/50782748/how-to-include-one-html-page-to-another-in-thymeleaf  -->
-<!--  importing fragments -->
 <body>
+
+  <div th:if="${name}">
+    <div th:text="${name}"></div>
+    <div th:text="${id}"></div>
+  </div>
+
 
   <header th:replace="~{/components/Header :: logo}" />
   <nav th:replace="~{/components/Navigation::topnav}" />
+
+
 
 
   <div id="testimonials">

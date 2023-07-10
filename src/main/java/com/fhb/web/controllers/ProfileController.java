@@ -19,7 +19,7 @@ public class ProfileController {
 
 //        model.addAttribute();
 
-        return "redirect:/categories";
+        return "redirect:/";
     }
 
 }

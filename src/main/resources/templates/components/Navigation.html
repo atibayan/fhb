@@ -1,11 +1,14 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en"
+    xmlns:th="http://www.thymeleaf.org"
+>
 
     <div th:fragment="topnav">
         <nav>
-            <a href="/legal/acceptable_use_policy"> Legal Pages</a>
-            <a href=""> Login</a>
-            <a href="/register"> register</a>
+            <a th:href="@{/legal/acceptable_use_policy}"> Legal Pages</a>
+            <a th:href="@{/login}"> Login</a>
+            <a th:href="@{/register}"> register</a>
+            <a th:href="@{/logout}"> logout </a>
         </nav>
     </div>
 

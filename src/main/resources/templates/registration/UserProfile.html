@@ -9,7 +9,7 @@
     <h4>Registration was successful <span th:text="${userName}"> </span> </h4>
 
     <form method="post" th:action="@{/profile/save}"  th:object="${profile}">
-        <input  type="hidden" th:value="${user}" >
+        <input  type="hidden" th:value="${user.getId()}" >
 
         <div class="profImg">
             profile picture

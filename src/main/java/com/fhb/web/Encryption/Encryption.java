@@ -1,5 +1,6 @@
 package com.fhb.web.Encryption;
 
+
 public class Encryption {
 
     private Long userId;
