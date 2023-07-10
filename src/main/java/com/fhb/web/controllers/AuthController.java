@@ -40,7 +40,10 @@ public class AuthController {
         LOGGER.info("inside authcontroller userName: "+userName);
 
         if(!userName.equals("anonymousUser")){
+//            https://www.youtube.com/watch?v=UaB-0e76LdQ&ab_channel=DanVega
+
             LOGGER.info("inside authcontroller userName: "+userName);
+
 
             long id=userService.findByUserName(userName).getUserId();
 
